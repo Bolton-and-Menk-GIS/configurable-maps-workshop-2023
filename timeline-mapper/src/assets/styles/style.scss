@@ -5,7 +5,8 @@
   cursor: pointer !important;
 }
 
+// override toggle checked
 .form-check-input:checked {
-  background-color: $secondary !important;
-  border-color: $secondary !important;
+  background-color: var(--bs-info) !important;
+  border-color: var(--bs-info) !important;
 }
