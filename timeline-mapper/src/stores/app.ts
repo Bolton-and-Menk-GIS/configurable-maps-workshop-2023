@@ -1,9 +1,12 @@
 // src/store/app.ts
 import { defineStore } from "pinia"
 import { ref, computed } from 'vue'
-import type { ThemeType } from "@/types"
+import { useWindowSize } from '@vueuse/core'
+import type { ThemeType, DeviceOrientation } from "@/types"
 
 export const useAppStore = defineStore('app', ()=> {
+
+  const { width, height } = useWindowSize()
  
   /**
    * will be true if the app is dark mode
@@ -38,8 +41,41 @@ export const useAppStore = defineStore('app', ()=> {
     return target.value
   }
 
+  /**
+   * the device orientation
+   */
+  const orientation = computed<DeviceOrientation>(()=> height.value > width.value ? 'portrait': 'landscape')
+  
+  // the below properties are based exclusively on the width
+  /**
+   * will be true when it is a small device (the width is < 577 pixels)
+   */
+  const isSmallDevice = computed(()=> width.value < 577)
+
+  /**
+   * will be true when it is a medium sized device (the width is between 576 and 992 pixels)
+   */
+  const isMediumDevice = computed(()=> width.value > 576 && width.value < 993)
+
+  /**
+   * will be true when it is a large sized device (the width is > 992 < 1201 pixels)
+   */
+  const isLargeDevice = computed(()=> width.value > 992 && width.value < 1201)
+
+  /**
+   * will be true when it is a large sized device (the width is > 992 pixels)
+   */
+  const isExtraLargeDevice = computed(()=> width.value > 1200)
+
   return {
     theme,
+    width,
+    height,
+    orientation,
+    isSmallDevice,
+    isMediumDevice,
+    isLargeDevice,
+    isExtraLargeDevice,
     darkMode,
     leftPaneOpen,
     rightPaneOpen,
