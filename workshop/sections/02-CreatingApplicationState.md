@@ -118,7 +118,7 @@ export * from './app'
 Save those two files and now we can go into the `src/store` folder and add a new file called `app.ts`. Here is where we will define our initial app state store:
 
 ```ts
-// src/store/app.ts
+// src/stores/app.ts
 import { defineStore } from "pinia"
 import { ref, computed } from 'vue'
 import type { ThemeType } from "@/types"
@@ -419,10 +419,10 @@ export type ThemeType = 'light' | 'dark'
 export type DeviceOrientation = 'portrait' | 'landscape'
 ```
 
-Now we can reference this new `DeviceOrientation` typing in our `app` store and add some helpful state properties. Open up the `src/store/app.ts` and make the following tweaks:
+Now we can reference this new `DeviceOrientation` typing in our `app` store and add some helpful state properties. Open up the `src/stores/app.ts` and make the following tweaks:
 
 ```ts
-// src/store/app.ts
+// src/stores/app.ts
 import { defineStore } from "pinia"
 import { ref, computed } from 'vue'
 import { useWindowSize } from '@vueuse/core'
