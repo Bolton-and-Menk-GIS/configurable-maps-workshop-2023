@@ -18,7 +18,6 @@ Workshop Materials for the 2023 MN GIS LIS Conference in Duluth, MN. October 4th
     - [Type Aliases](#type-aliases)
     - [Generics](#generics)
     - [Conditionals](#conditionals)
-  - [Typings Playground](#typings-playground)
   - [Typescript Configuration](#typescript-configuration)
 - [About Vue](#about-vue)
   - [Comparison to Other Frameworks](#comparison-to-other-frameworks)
@@ -117,25 +116,55 @@ With the Vue browser plugin, we can inspect things without needing to console.lo
 
 # TypeScript Basics
 
-Take it away, Caleb!
+TypeScript is a superset of JavaScript that enhances the developer experience and results in safer and more reliable code by including static typing and improving the tooling and IDE support. JavaScript was created as scripting language with loose and dynamic variables with the intention of only making simple changes to websites. Over the years, JavaScript has evolved and is now used in full stack development and large scale applications can be difficult to maintain and finding bugs isn't always obvious. This is where TypeScript can be useful to prevent bugs by showing errors when using the wrong data types. Readability is also improved as the function signatures will show exactly what parameters are expected in great detail as well as the return types.
+
+
+* Strong Typing: TypeScript introduces static typing to JavaScript, allowing developers to specify types for variables, function parameters, and return values. This helps catch errors during development and provides better code documentation and tooling support.
+
+* Enhanced IDE Support: TypeScript provides improved support for code editors and integrated development environments (IDEs). With type information, IDEs can offer features like autocompletion, intelligent code navigation, and error detection, leading to enhanced productivity and fewer bugs.
+  
+* Improved Maintainability: By enforcing strict typing, TypeScript makes code easier to read, understand, and maintain. Types help in documenting the expected structure of data and enable developers to catch potential issues early on, reducing bugs and improving long-term code maintainability.
+  
+* Advanced Language Features: TypeScript is a superset of JavaScript, meaning it includes all JavaScript features and adds additional functionalities. These include features like classes, interfaces, generics, modules, and decorators, which aid in writing cleaner and more organized code.
+
+* Better Collaboration: With TypeScript, developers can define clear contracts using interfaces and types, which improves communication and collaboration among team members. The shared understanding of data structures and interfaces facilitates teamwork and reduces misunderstandings.
+  
+* Code Refactoring and Scalability: TypeScript allows for easier refactoring due to its strong typing and tooling support. As projects grow in size and complexity, TypeScript's ability to catch errors early and support large codebases makes it easier to maintain and scale applications.
+  
+* Compatibility with JavaScript Ecosystem: TypeScript is designed to be a superset of JavaScript, so existing JavaScript code can be seamlessly integrated into TypeScript projects. It offers incremental adoption, allowing developers to gradually introduce TypeScript into their existing JavaScript codebases.
 
 ## Primitive Types
 
+Just the basics such as `string`, `number`, and `boolean`
+
 ## Advanced Types
 
+Includes custom interfaces, type aliases and [utility types](https://www.typescriptlang.org/docs/handbook/utility-types.html)
+
 ### Interfaces
+A quick way to define properties for an object
 
 ### Unions and Intersections
 
+use one of several types (union) or combine properties from 2 or more types (intersection)
+
 ### Type Aliases
+
+can create new types from combinations of other typings
 
 ### Generics
 
+Very powerful feature, can be used to pass in custom typings to create more dynamic types. 
+
+[https://www.typescriptlang.org/docs/handbook/2/generics.html](https://www.typescriptlang.org/docs/handbook/2/generics.html)
+
 ### Conditionals
 
-## Typings Playground
+Another powerful feature to infer typings based on conditions
 
 ## Typescript Configuration
+
+TypeScript projects should contain a [tsconfig.json](https://www.typescriptlang.org/docs/handbook/tsconfig-json.html) file for the TypeScript Settings
 
 # About Vue
 
