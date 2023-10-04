@@ -1,6 +1,10 @@
 <script setup lang="ts">
+import { useAppStore } from "./stores";
+import "@/assets/font-awesome"
 import "@/assets/styles/style.scss"
+
 import AppHeader from '@/components/AppHeader.vue'
+const appStore = useAppStore()
 </script>
 
 <template>
@@ -12,19 +16,30 @@ import AppHeader from '@/components/AppHeader.vue'
       </div>
     </div>
 
-    <div class="row">
+    <div class="row main-content-row">
       <!-- left panel -->
-      <div class="col-md-2 border sidebar">
+      <div 
+        v-if="appStore.leftPaneOpen && !appStore.isSmallDevice" 
+        class="col-md-3 col-xl-2 border sidebar" 
+        style="background-color: orange;"
+      >
         sidebar
       </div>
 
       <!-- main section -->
-      <div class="col-md-8 border">
+      <div 
+        class="col"
+        style="background-color: green;"
+      >
         main content
       </div>
       
       <!-- right panel -->
-      <div class="col-md-2 border sidebar">
+      <div 
+        v-if="appStore.rightPaneOpen && !appStore.isSmallDevice" 
+        class="col-md-3 col-xl-2 border sidebar" 
+        style="background-color: red;"
+      >
         sidebar
       </div>
     </div>
@@ -35,7 +50,7 @@ import AppHeader from '@/components/AppHeader.vue'
 <style lang="scss">
 @import "@/assets/styles/variables";
 
-.sidebar {
+.main-content-row {
   height: $max-height;
 }
 

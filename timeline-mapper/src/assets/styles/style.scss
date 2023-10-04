@@ -1,2 +1,11 @@
 // Import all of Bootstrap's CSS
 @import "~bootstrap/scss/bootstrap";
+
+.cursor-pointer, .svg-inline--fa, .form-check-input {
+  cursor: pointer !important;
+}
+
+.form-check-input:checked {
+  background-color: $secondary !important;
+  border-color: $secondary !important;
+}
