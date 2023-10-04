@@ -22,3 +22,12 @@ map:
     center:
       - -121.31342930034322
       - 38.58881993999289
+
+  timelineInfo:
+    titleExpression: $feature.crime
+    subtitleExpression: $feature.city + ", CA"
+    descriptionExpression: $feature.incident
+    dateFormat: M/D/YYYY
+    layer:
+      title: Golden State Killer Crimes
+      dateField: date

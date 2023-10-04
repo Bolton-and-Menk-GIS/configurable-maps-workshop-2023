@@ -28,6 +28,16 @@
         -79.87481095392569,
         32.752114229033296
       ]
+    },
+    "timelineInfo": {
+      "titleExpression": "$feature.Battle",
+      "subtitleExpression": "$feature.Campaign",
+      "descriptionExpression": "$feature.Description",
+      "dateFormat": "M/D/YYYY",
+      "layer": {
+        "id": "18802125e0d-layer-3",
+        "dateField": "Start_Date"
+      }
     }
   }
 }

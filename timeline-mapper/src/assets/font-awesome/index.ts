@@ -2,14 +2,22 @@ import { library } from '@fortawesome/fontawesome-svg-core';
 
 import { 
   faBars, 
-  faCircleHalfStroke, 
   faList,
+  faFilter,
+  faChevronLeft,
+  faChevronRight,
+  faCircleHalfStroke, 
+  faFilterCircleXmark,
 } from '@fortawesome/free-solid-svg-icons'
 
 const faIcons = [
-  faBars,
+  faBars, 
   faList,
-  faCircleHalfStroke,
+  faFilter,
+  faChevronLeft,
+  faChevronRight,
+  faCircleHalfStroke, 
+  faFilterCircleXmark,
 ]
 
 for (const icon of faIcons){

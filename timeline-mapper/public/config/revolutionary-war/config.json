@@ -1,0 +1,41 @@
+{
+  "app": {
+    "title": "Revolutionary War Battles",
+    "theme": {
+      "primary": "#922C40",
+      "secondary": "#DC9750",
+      "info": "#F3EAC0",
+      "dark": "#1D1D1D",
+      "success": "#21BA45",
+      "danger": "#C10015",
+      "warning": "#F2C037"
+    }
+  },
+  "map": {
+    "webmap": {
+      "basemap": "gray-vector",
+      "portalItem": {
+        "id": "79cd2fca5b0345f8acbedbd3e53a7116",
+        "portal": {
+          "url": "https://bmi.maps.arcgis.com/"
+        }
+      }
+    },
+    "mapView": {
+      "zoom": 6,
+      "center": [
+        -71.34944000013272,
+        42.4616699997425
+      ]
+    },
+    "timelineInfo": {
+      "layer": {
+        "id": "American_Revolutionary_War_Battles_4510",
+        "dateField": "BEGIN_DATE"
+      },
+      "titleExpression": "$feature.BATTLE",
+      "subtitleExpression": "\"Region - \" + $feature.US_REGION",
+      "descriptionExpression": "\"Won by \" + $feature.VICTOR + \" forces\""
+    }
+  }
+}

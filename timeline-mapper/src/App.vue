@@ -3,10 +3,14 @@ import "@/assets/font-awesome"
 import "@/assets/styles/style.scss"
 import { defineAsyncComponent } from "vue";
 import { useAppStore } from "@/stores";
+import { useTimeline } from "@/composables";
 import AppHeader from '@/components/AppHeader.vue'
 import Spinner from "@/components/Spinner.vue";
+import TimelineList from "./components/TimelineList.vue";
 const MapView = defineAsyncComponent(()=> import('@/views/MapView.vue'))
 const appStore = useAppStore()
+
+const { isLoadingEvents } = useTimeline()
 </script>
 
 <template>
@@ -21,10 +25,11 @@ const appStore = useAppStore()
     <div class="row main-content-row">
       <!-- left panel -->
       <div 
-        v-if="appStore.leftPaneOpen && !appStore.isSmallDevice" 
+        v-show="appStore.leftPaneOpen && !appStore.isSmallDevice" 
         class="col-md-3 col-xl-2 border sidebar" 
       >
-        sidebar
+        <Spinner v-if="isLoadingEvents" class="mx-auto my-auto"/>
+        <TimelineList />
       </div>
 
       <!-- main section -->
@@ -41,10 +46,11 @@ const appStore = useAppStore()
       
       <!-- right panel -->
       <div 
-        v-if="appStore.rightPaneOpen && !appStore.isSmallDevice" 
+        v-show="appStore.rightPaneOpen && !appStore.isSmallDevice" 
         class="col-md-3 col-xl-2 border sidebar" 
       >
-        sidebar
+          <Spinner v-if="isLoadingEvents" class="mx-auto my-auto"/>
+          <div class="feature-container p-2" id="feature-container"></div>
       </div>
     </div>
   </div>

@@ -21,3 +21,11 @@ map:
     center:
       - -71.34944000013272
       - 42.4616699997425
+      
+  timelineInfo: 
+    layer: 
+      id: American_Revolutionary_War_Battles_4510
+      dateField: BEGIN_DATE
+    titleExpression: $feature.BATTLE
+    subtitleExpression: '"Region - " + $feature.US_REGION'
+    descriptionExpression: '"Won by " + $feature.VICTOR + " forces"'
