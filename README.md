@@ -2,8 +2,14 @@
 
 Workshop Materials for the 2023 MN GIS LIS Conference in Duluth, MN. October 4th, 9 am - 5 pm.
 
+- [configurable-maps-workshop-2023](#configurable-maps-workshop-2023)
 - [Getting Started](#getting-started)
-- [Installation](#installation)
+- [1. Installation](#1-installation)
+  - [IDE Setup](#ide-setup)
+    - [Typescript Support](#typescript-support)
+  - [Vue CLI (Legacy)](#vue-cli-legacy)
+  - [Vite Setup](#vite-setup)
+  - [Browser Plugin](#browser-plugin)
 - [TypeScript Basics](#typescript-basics)
   - [Primitive Types](#primitive-types)
   - [Advanced Types](#advanced-types)
@@ -14,11 +20,6 @@ Workshop Materials for the 2023 MN GIS LIS Conference in Duluth, MN. October 4th
     - [Conditionals](#conditionals)
   - [Typings Playground](#typings-playground)
   - [Typescript Configuration](#typescript-configuration)
-  - [IDE Setup](#ide-setup)
-    - [TypeScript Support](#typescript-support)
-  - [Vue CLI (legacy)](#vue-cli-legacy)
-  - [Vite Setup](#vite-setup)
-  - [Browser Plugin](#browser-plugin)
 - [About Vue](#about-vue)
   - [Comparison to Other Frameworks](#comparison-to-other-frameworks)
   - [Components](#components)
@@ -30,23 +31,22 @@ Workshop Materials for the 2023 MN GIS LIS Conference in Duluth, MN. October 4th
   - [String Interpolation](#string-interpolation)
   - [Directives](#directives)
     - [Using v-model](#using-v-model)
-    - [Conditionals](#conditionals)
+    - [Conditionals](#conditionals-1)
     - [Lists with v-for](#lists-with-v-for)
     - [Event handling with v-on](#event-handling-with-v-on)
   - [Class and Style Binding](#class-and-style-binding)
+- [Options API (legacy)](#options-api-legacy)
 - [Composition API](#composition-api)
   - [Reactivity Fundamentals](#reactivity-fundamentals)
     - [ref](#ref)
     - [reactive](#reactive)
     - [computed](#computed)
-    - [watch and watchEffect](#watch-and-watchEffect)
-  - [Options API (legacy)](#options-api-legacy)
+    - [watch and watchEffect](#watch-and-watcheffect)
 - [Single File Components](#single-file-components)
   - [Setup Function](#setup-function)
   - [Setup Script (Recommended)](#setup-script-recommended)
     - [TypeScript Support (Macros)](#typescript-support-macros)
-      - [defineProps](#defineprops)
-      - [defineEmits](#defineemits)
+      - [defineProps \& defineEmits](#defineprops--defineemits)
       - [defineSlots](#defineslots)
       - [defineExpose](#defineexpose)
     - [Async Components](#async-components)
@@ -58,7 +58,7 @@ Workshop Materials for the 2023 MN GIS LIS Conference in Duluth, MN. October 4th
   - [Scoped Slots](#scoped-slots)
 - [Using the Composition API](#using-the-composition-api)
   - [Composable Functions](#composable-functions)
-  - [@vueuse](#@vueuse)
+  - [@vueuse](#vueuse)
 - [Advanced Usage](#advanced-usage)
   - [render functions](#render-functions)
   - [JSX/TSX Support](#jsxtsx-support)
@@ -72,7 +72,7 @@ Workshop Materials for the 2023 MN GIS LIS Conference in Duluth, MN. October 4th
 
 # Getting Started
 
-This workshop has two ways to approach it. VMs are available for individuals who would like to get right into the application building process and not have to install a bunch of unfamiliar tools on your personal laptops. The downside to the VMs is that once you leave the workshop, you lose all of your work (unless you plan on forking this repo to your own github accounts), so consider heavily whether you would like to take the time to set up your development envionrment locally or quickstart this workshops with the VM. Skip ahead to the [About Vue](#about-vue) section if you're using a VM, otherwise, continue with the installation steps below.
+This workshop has two ways to approach it. VMs are available for individuals who would like to get right into the application building process and not have to install a bunch of unfamiliar tools on your personal laptops. The downside to the VMs is that once you leave the workshop, you lose all of your work (unless you plan on forking this repo to your own github accounts), so consider heavily whether you would like to take the time to set up your development environment locally or quickstart this workshops with the VM. Skip ahead to the [About Vue](#about-vue) section if you're using a VM, otherwise, continue with the installation steps below.
 
 # 1. Installation
 
@@ -93,25 +93,25 @@ If you did not install the Vue Volar Extension Pack from the previous section, p
 
 - [ ] TypeScript Vue Plugin (Volar)
 
-This is what this workshop will rely on for the majority of our code autocompletion and type checking. VSCode does have its own typescript plugins, but since we will be working with .vue files, we will want the extra compatability this plugin brings to our project.
+This is what this workshop will rely on for the majority of our code autocompletion and type checking. VSCode does have its own typescript plugins, but since we will be working with .vue files, we will want the extra compatibility this plugin brings to our project.
 
 ## Vue CLI (Legacy)
 
-This is the old way of doing things. The offical docs give a quick overview of what this all is. https://cli.vuejs.org/guide
+This is the old way of doing things. The official docs give a quick overview of what this all is. https://cli.vuejs.org/guide
 
-Lately, people have been stepping away from Vue CLI in favor of Vite. (You can even see this warning at the top of the page when you visit the link.) We won't be using this this build tool, but it's good to know that the primary reason for Vue CLI was to bundle and translate modern code into older code to deploy on the internt BCE (Before Current ~~Microsoft~~ Edge). Keywords: Internet Explorer, ES4, ES6 / ESM, Webpack.
+Lately, people have been stepping away from Vue CLI in favor of Vite. (You can even see this warning at the top of the page when you visit the link.) We won't be using this this build tool, but it's good to know that the primary reason for Vue CLI was to bundle and translate modern code into older code to deploy on the internet BCE (Before Current ~~Microsoft~~ Edge). Keywords: Internet Explorer, ES4, ES6 / ESM, Webpack.
 
 ## Vite Setup
 
-As noted earlier, Vite will be our primary build tool. It's fast. Like, really fast. Slacking off because "your code is compling" is no longer an excuse. Let's get up and running with Vite by going into our VSC terminal and entering:
+As noted earlier, Vite will be our primary build tool. It's fast. Like, really fast. Slacking off because "your code is compiling" is no longer an excuse. Let's get up and running with Vite by going into our VSC terminal and entering:
 
 - [ ] npm create vite@latest
 
-You'll be asked a bunch of questions about how you want to setup your environment. Check in with Part 1 the timeline mapper for a list of recommended setup methods. It doesn't hurt to run this command a couple of times with different parameters to see what evnironment each one nets you. You can always delete the created projects and try again.
+You'll be asked a bunch of questions about how you want to setup your environment. Check in with Part 1 the timeline mapper for a list of recommended setup methods. It doesn't hurt to run this command a couple of times with different parameters to see what environment each one nets you. You can always delete the created projects and try again.
 
 ## Browser Plugin
 
-Wtih the Vue browser plugin, we can inspect things without needing to console.log() them. We can also look at our variables throughout time to see how they change during the application, or inject values to them to change our application state without needing to updpate our code in VSC. Download it from the chrome web store below.
+With the Vue browser plugin, we can inspect things without needing to console.log() them. We can also look at our variables throughout time to see how they change during the application, or inject values to them to change our application state without needing to update our code in VSC. Download it from the chrome web store below.
 
 - [ ] https://chrome.google.com/webstore/detail/vuejs-devtools/nhdogjmejiglipccpnnnanhbledajbpd
 
@@ -168,7 +168,7 @@ The magic of template strings and v-bind. https://vuejs.org/guide/extras/renderi
 
 ### Vapor Mode
 
-The virtual DOM but BETTER.
+An experimental option for future versions of Vue that will let you opt out of the virtual DOM.
 
 # Template Syntax
 
@@ -270,7 +270,7 @@ Components that are very polite and will ask other components to be patient with
 
 ## Scoped CSS
 
-Adding `scoped` to your `<style>` tags will ensure all of your CSS stays limited to the component in which you're developing. No more global CSS shinanigans or playing "find the offender" when something randomly decides it wants to look different from what it's supposed to. https://vuejs.org/api/sfc-css-features.html#scoped-css
+Adding `scoped` to your `<style>` tags will ensure all of your CSS stays limited to the component in which you're developing. No more global CSS shenanigans or playing "find the offender" when something randomly decides it wants to look different from what it's supposed to. https://vuejs.org/api/sfc-css-features.html#scoped-css
 
 # Using Slots
 
@@ -278,7 +278,7 @@ Customizable parts of custom components! https://vuejs.org/guide/components/slot
 
 ## Default Slot
 
-This is a slot you can pass to whithout having to ask for an introduction first. Anything you put between the `<ComponentTag>Will be picked up<ComponentTag>` and used by the default slot.
+This is a slot you can pass to without having to ask for an introduction first. Anything you put between the `<ComponentTag>Will be picked up<ComponentTag>` and used by the default slot.
 
 ## Named Slots
 
@@ -286,15 +286,15 @@ He'll ignore you if you don't call him by his chosen name. Be courteous. https:/
 
 ## Scoped Slots
 
-Doen't want to do things alone. Will need help from the parent and child components to render fully. Very specialized. https://vuejs.org/guide/components/slots.html#scoped-slots
+Doesn't want to do things alone. Will need help from the parent and child components to render fully. Very specialized. https://vuejs.org/guide/components/slots.html#scoped-slots
 
 # Using the Composition API
 
-Our Vue flavor of choice. (We will be using the `script setup` tag in our app, but it's good to look over how things are defined more explicity with the setup function) https://vuejs.org/api/composition-api-setup.html#basic-usage
+Our Vue flavor of choice. (We will be using the `script setup` tag in our app, but it's good to look over how things are defined more explicitly with the setup function) https://vuejs.org/api/composition-api-setup.html#basic-usage
 
 ## Composable Functions
 
-A nice way to code split out funcitions you find yourself using in multiple places. https://vuejs.org/guide/reusability/composables.html
+A nice way to code split out functions you find yourself using in multiple places. https://vuejs.org/guide/reusability/composables.html
 
 ## @vueuse
 
