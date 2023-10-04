@@ -217,6 +217,14 @@ export interface AppConfig {
 
 We will continue to extend these configuration typings as we add support for more configurable properties.
 
+We also need to expose the `config.ts` file as part of our `@/types` by updating the `src/types/index.ts` file: 
+
+```ts
+// src/types/index.ts
+export * from './app'
+export * from './config'
+```
+
 ## Creating our first Configuration
 
 Now we are ready to set up our first configuration. Let's start with adding a configuration for the [Civil War Battles Webmap](https://bmi.maps.arcgis.com/home/item.html?id=246abd2b6b71403b9edbe6538ebc8534):
