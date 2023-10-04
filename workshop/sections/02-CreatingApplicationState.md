@@ -731,6 +731,8 @@ And also add the `mt-1` class to the `fa-bars` icon and the `align-middle` to th
 
 ![002_app-header-dark-mode-code.png](../resources/images/002_app-header-dark-mode-code.png)
 
+> **Important** - in the screenshot above it is **not** highlighted in red, but we also need to add the `<DarkModeToggle />` component into the `template`.
+
 Once you save, it should look like this on small and regular screens:
 
 ![002_app-header-dark-mode-small.png](../resources/images/002_app-header-dark-mode-small.png)
@@ -757,7 +759,7 @@ We can override the background so that it stands out a little better. We can do 
 }
 ```
 
-You may have also noticed we used a `cursor-pointer` class in the `DarkModeToggle` component. We also have implemented that here as a shorthand to turn the cursor to apointer on hover and also applied that to bootstrap `form-check-input` elements and the `svg-inline--fa`, which automatically is added by font awesome so we get the pointer when using font awesome icons. We also are making the `form-check-input:checked` use the bootstrap `$secondary` Sass variable so that when we have check boxes or toggles on a primary color background they will stand out. Later, we will see how to use configuration files to override the bootstrap color theme with our own colors, so each deployment of the application can be customized to have its own look and feel. Save the `styles.scss` file and let's see how the toggle looks now:
+You may have also noticed we used a `cursor-pointer` class in the `DarkModeToggle` component. We also have implemented that here as a shorthand to turn the cursor to a pointer on hover and also applied that to bootstrap `form-check-input` elements and the `svg-inline--fa`, which automatically is added by font awesome so we get the pointer when using font awesome icons. We also are making the `form-check-input:checked` use the bootstrap `$secondary` Sass variable so that when we have check boxes or toggles on a primary color background they will stand out. Later, we will see how to use configuration files to override the bootstrap color theme with our own colors, so each deployment of the application can be customized to have its own look and feel. Save the `styles.scss` file and let's see how the toggle looks now:
 
 ![002_toggle-secondary.gif](../resources/images/002_toggle-secondary.gif)
 
