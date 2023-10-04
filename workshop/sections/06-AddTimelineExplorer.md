@@ -18,6 +18,10 @@
 <!-- TOC --><a name="section-6-adding-the-timeline-explorer"></a>
 # Section 6 - Adding the Timeline Explorer
 
+> note: if you do not want to manually type out all this code, you can just checkout the solution branch by doing:
+>  `git checkout 06-add-timeline-explorer`
+
+
 Now that we have our dynamic configurations working to support multiple deployments it's time to add the main part of our app, which is focusing on the timeline side of the data. If we refer back to the wireframe we want to list out all the timeline events in the left panel, show the timeline slider below the map, and show the detailed view of the current event in the right panel:
 
 ![wire-frame.png](../resources/images/wire-frame.png)

@@ -7,6 +7,9 @@
 
 # Section 4 - Adding a Color Theme
 
+> note: if you do not want to manually type out all this code, you can just checkout the solution branch by doing:
+>  `git checkout 04-add-color-theme`
+
 One piece of our configuration we have defined but not yet implemented is the Color Theme. By allowing a custom color theme, each deployment can be configured to have its own look and feel. As a reminder, these are the bootstrap color theme variables we want to override.
 
 ![003_bs-theme-map.png](../resources/images/003_bs-theme-map.png)

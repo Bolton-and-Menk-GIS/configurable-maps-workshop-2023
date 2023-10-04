@@ -23,6 +23,10 @@ If you ran this command, just read through the sections on creating the config f
 <!-- TOC --><a name="dynamic-configurations"></a>
 # Dynamic Configurations
 
+> note: if you do not want to manually type out all this code, you can just checkout the solution branch by doing:
+>  `git checkout 05-dynamic-config`
+
+
 Now we have to find a way to inject dynamic configuration into our app based on whichever deployment the end user is accessing. Remember, we have 3 webmaps that will be the focal point of each deployment: Civil War Battles, Golden State Killer Crimes, and Revolutionary War Battles. And of course, you can create any number of other deployments that you want.
 
 The simplest way is to store static configuration files. These can be in either `json` or `yaml` format to provide flexibility for the developer to choose which they are more comfortable with. But where should these static files exist? Should they go in the source code? They can, but that comes with a huge caveat which is that any time you add a new configuration for a new deployment or even make changes to an existing one, you would have to rebuild the app to bundle the new configuratoin file(s). This is not ideal, especially because the point of our configuration files/deployments is so we don't have to mess with the source code. The configurations and source code of our app should be independent of each other. So where should these configuration files go?

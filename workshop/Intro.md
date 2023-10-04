@@ -63,7 +63,7 @@ To get started, proceed to [Section 1 - Getting Started](./sections/001-GettingS
 
 #### The completed Application
 
-**TL;DR** - the completed application code can be found [here]().
+**TL;DR** - the completed application code (with the exception of the demo features) can be found in the `solution` branch.
 
 > note: This workshop material ended up being a little too ambitious for the allotted time, so of the more complex supplemental features have been stripped out as they are outside the scope of this workshop. The following features not considered to be part of the "core" app are only present in the Demo App:
 > * Dynamic Widget Loading
