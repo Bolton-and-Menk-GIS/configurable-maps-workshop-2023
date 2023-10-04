@@ -481,7 +481,7 @@ export const useAppStore = defineStore('app', ()=> {
   /**
    * will be true if the app is dark mode
    */
-  const darkMode = ref(initialTheme === 'dark')
+  const darkMode = ref(false)
 
   /**
    * state for the left panel, true when open
