@@ -1,0 +1,35 @@
+---
+app:
+  title: Civil War Battles
+  theme:
+    # note we have to wrap these in quotes because otherwise
+    # the hex values would be interpreted as comments in yaml
+    primary: "#ffa500"
+    secondary: "#FFD93D"
+    info: "#406ac9"
+    dark: "#1D1D1D"
+    success: "#21BA45"
+    danger: "#ac0b30"
+    warning: "#F2C037"
+map:
+  defaultDarkBasemapId: streets-night-vector
+  defaultLightBasemapId: topo-vector
+  webmap:
+    portalItem:
+      id: 246abd2b6b71403b9edbe6538ebc8534
+      portal:
+        url: https://bmi.maps.arcgis.com/
+  mapView:
+    zoom: 4
+    center:
+    - -79.87481095392569
+    - 32.752114229033296
+
+  timelineInfo:
+    titleExpression: $feature.Battle
+    subtitleExpression: $feature.Campaign
+    descriptionExpression: $feature.Description
+    dateFormat: M/D/YYYY
+    layer:
+      id: 18802125e0d-layer-3
+      dateField: Start_Date

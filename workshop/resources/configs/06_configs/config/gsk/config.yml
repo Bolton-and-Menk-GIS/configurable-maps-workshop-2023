@@ -1,0 +1,33 @@
+app:
+  title: Golden State Killer Crimes
+  theme:
+    primary: "#741AAC"
+    secondary: "#a453c2"
+    info: "#F273E6"
+    dark: "#1D1D1D"
+    success: "#21BA45"
+    danger: "#C10015"
+    warning: "#F2C037"
+map:
+  defaultDarkBasemapId: streets-night-vector
+  defaultLightBasemapId: streets-navigation-vector
+  webmap:
+    basemap: dark-gray-vector
+    portalItem: 
+      id: 552911b9c87f4ac6b1d40fff31dd4c23
+      portal:
+        url: https://bmi.maps.arcgis.com/
+  mapView:
+    zoom: 10
+    center:
+      - -121.31342930034322
+      - 38.58881993999289
+
+  timelineInfo:
+    titleExpression: $feature.crime
+    subtitleExpression: $feature.city + ", CA"
+    descriptionExpression: $feature.incident
+    dateFormat: M/D/YYYY
+    layer:
+      title: Golden State Killer Crimes
+      dateField: date
