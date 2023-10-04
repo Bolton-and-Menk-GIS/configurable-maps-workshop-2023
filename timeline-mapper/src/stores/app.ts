@@ -1,8 +1,9 @@
 // src/stores/app.ts
 import { defineStore } from "pinia"
-import { ref, computed, type Ref } from 'vue'
+import { ref, computed, watch, type Ref } from 'vue'
 import { useWindowSize } from '@vueuse/core'
 import type { ThemeType, DeviceOrientation, AppConfig } from "@/types"
+import { setBootstrapTheme, getPreferredTheme } from "@/utils"
 
 const testConfig: AppConfig = {
   app: {
@@ -54,7 +55,17 @@ export const useAppStore = defineStore('app', ()=> {
   /**
    * will be true if the app is dark mode
    */
-  const darkMode = ref(false)
+  const darkMode = ref(getPreferredTheme() === 'dark')
+
+  // update the bootstrap theme whenever the dark mode changes from the toggle
+  watch(
+    ()=> darkMode.value,
+    (isDark)=> {
+      setBootstrapTheme(isDark ? 'dark': 'light')
+    },
+    // run watch handler immediately
+    { immediate: true }
+  )
 
   /**
    * state for the left panel, true when open
