@@ -1,0 +1,13 @@
+apps:
+  - id: gsk
+    name: Golden State Killer Crimes
+    # I'm using ".yml" files for all of mine, feel free to change to ".json"
+    path: gsk/config.yml
+
+  - id: civil-war
+    name: Civil War Battles
+    path: civil-war/config.yml
+
+  - id: revolutionary-war
+    name: Revolutionary War Battles
+    path: revolutionary-war/config.yml
