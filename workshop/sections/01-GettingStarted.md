@@ -13,11 +13,14 @@
 >  `git checkout 001-getting-started`
 > Please note that you will still need to run `npm install` to install the necessary dependencies.
 
+
 To get started, we will create a new project using the [create-vue](https://github.com/vuejs/create-vue) scaffolding tool. Open up a terminal and navigate to a folder location where you will want to build this application and enter the following command: 
 
 ```sh
 npm create vue@latest
 ```
+
+> note: running the `create-vue` command is only necessary if you are building this application **outside** of this repository. I have already ran this command for this repo and the files can be found in the `timeline-mapper` folder. The manual creation step is documented for completeness.
 
 This will take you through some interactive prompts to set up your project. Use the following answers for the prompts:
 
