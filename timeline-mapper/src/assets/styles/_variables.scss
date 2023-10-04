@@ -1,0 +1,10 @@
+/** height of our navbar header */
+$navbar-height: 50px;
+
+/** maximum height for any container, anything beyond this will overflow */
+$max-height: calc(100vh - $navbar-height);
+
+/** maximum height for any content, this will take up almost all
+ * the height but leaves an extra 10px to leave a little padding
+ */
+$max-content-height: calc(100vh - 60px);
