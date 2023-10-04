@@ -17,7 +17,7 @@ const appStore = useAppStore()
             @click="appStore.togglePanel('left')"
           />
         </span>
-        <span class="navbar-brand mb-0 h1 text-light">Timeline Mapper</span>
+        <span class="navbar-brand mb-0 h1 text-light">{{ appStore.config.app.title }}</span>
         
         <span class="float-right d-flex justify-content-between mt-1 align-middle">
           <DarkModeToggle />

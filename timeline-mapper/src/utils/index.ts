@@ -1,3 +1,5 @@
 export * from './colors'
+export * from './fetch'
 export * from './logger'
 export * from './theme'
+export * from './utils'

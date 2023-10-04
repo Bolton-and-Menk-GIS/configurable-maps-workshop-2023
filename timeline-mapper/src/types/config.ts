@@ -63,3 +63,26 @@ export interface AppConfig {
    */
   map: MapConfig;
 }
+
+/**
+ * represents an app deployement configuration within the Config Registry
+ */
+export interface RegistryItem {
+  /** the deployment id */
+  id: string;
+  /** the deployment name */
+  name: string;
+  /** 
+   * the deployment config file path, can be a full url or a relative
+   * path to the public folder
+   */
+  path: string;
+}
+
+/**
+ * the Configuration Registry of app deployments
+ */
+export interface ConfigRegistry {
+  /** the registered application deployment configs */
+  apps: RegistryItem[];
+}
