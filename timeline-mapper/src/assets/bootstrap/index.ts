@@ -4,6 +4,7 @@ import type { DirectiveBinding, Directive } from 'vue'
 import { 
   Popover
 } from 'bootstrap'
+import { log } from '@/utils'
 
 export type PopoverProps = Partial<Popover.Options>;
 
@@ -17,7 +18,7 @@ const DefaultOptions: Partial<Popover.Options> = {
  */
 export const PopoverDirective = {
   mounted(el: HTMLElement, binding: DirectiveBinding<PopoverProps>){
-    console.log('initializing Popover Directive with the following options: ', binding.value, ' on the target element: ', el)
+    log('initializing Popover Directive with the following options: ', binding.value, ' on the target element: ', el)
     const options: PopoverProps = {
       ...DefaultOptions,
       ...(binding.value ?? {})
