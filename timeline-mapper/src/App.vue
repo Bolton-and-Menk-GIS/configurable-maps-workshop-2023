@@ -67,4 +67,15 @@ const { isLoadingEvents } = useTimeline()
 .app-navbar {
   height: $navbar-height;
 }
+
+.feature-container {
+  max-height: $max-content-height;
+  overflow-y: auto;
+}
+
+.esri-feature {
+  &__title, &__main-container {
+    padding: 0.5rem !important;
+  }
+}
 </style>
