@@ -10,6 +10,7 @@
     - [Tracking the Device Size](#tracking-the-device-size)
 - [Making the Panels and Main Content Responsive](#making-the-panels-and-main-content-responsive)
     - [Adding Dark Mode Support (just the UI for now)](#adding-dark-mode-support-just-the-ui-for-now)
+      - [Skip the Optional Stuff - Polyfill Logging](#skip-the-optional-stuff---polyfill-logging)
 - [Optional - Supplemental Content](#optional---supplemental-content)
     - [Adding Tooltips](#adding-tooltips)
       - [Console Cleanup](#console-cleanup)
@@ -765,7 +766,30 @@ You may have also noticed we used a `cursor-pointer` class in the `DarkModeToggl
 
 The default secondary color from bootstrap doesn't look super great with the primary background, but that is okay because this will get overwritten when we start configuring the applications. We have our dark mode toggle, which does not actually toggle dark mode yet. But we will set that up soon in Section 3.
 
-At this point, we have the initial layout and panel behavior completed. The content below is *not a requirement* for the application but it does provide some nice functionality for the end users which is adding tooltips for our buttons when we hover over them. If you want to skip ahead to [Section 3 - Adding a Map](./03-AddMap.md) proceed now. Otherwise, if you want to go through the steps to add tooltips continue on to the [Adding Tooltips](#adding-tooltips) selection below. 
+At this point, we have the initial layout and panel behavior completed. The content below is *not a requirement* for the application but it does provide some nice functionality for the end users which is adding tooltips for our buttons when we hover over them. If you want to skip over this stuff proceed to the `Skip the Optional Stuff - Polyfill Logging` below, otherwise go to the `Options - Supplemental Material`
+
+#### Skip the Optional Stuff - Polyfill Logging
+If you are going to skip over the optional stuff, we just need to polyfill our `logging` module:
+
+```sh
+mkdir src/utils && touch src/utils/logger.ts src/utils/index.ts
+```
+
+And in `src/utils/logger.ts` add our polyfill:
+
+```ts
+// src/utils/logger.ts
+export const log = console.log
+```
+
+And then in the `src/utils/index.ts` add the following: 
+
+```ts
+// src/utils/index.ts
+export * from './logger'
+```
+
+Now that this is polyfilled you can go ahead to [Section 3 - Adding a Map](./03-AddMap.md) proceed now. Otherwise, if you want to go through the steps to add tooltips continue on to the [Adding Tooltips](#adding-tooltips) selection below. 
 
 > note: if you want to skip going through the steps but want to have the code for adding the tooltips, you can `git pull 02-creating-application-state`.
 
