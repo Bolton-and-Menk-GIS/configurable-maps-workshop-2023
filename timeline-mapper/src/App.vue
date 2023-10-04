@@ -22,7 +22,6 @@ const appStore = useAppStore()
       <div 
         v-if="appStore.leftPaneOpen && !appStore.isSmallDevice" 
         class="col-md-3 col-xl-2 border sidebar" 
-        style="background-color: orange;"
       >
         sidebar
       </div>
@@ -30,7 +29,6 @@ const appStore = useAppStore()
       <!-- main section -->
       <div 
         class="col"
-        style="background-color: green;"
       >
         main content
       </div>
@@ -38,8 +36,7 @@ const appStore = useAppStore()
       <!-- right panel -->
       <div 
         v-if="appStore.rightPaneOpen && !appStore.isSmallDevice" 
-        class="col-md-3 col-xl-2 border sidebar" 
-        style="background-color: red;"
+        class="col-md-3 col-xl-2 border sidebar"
       >
         sidebar
       </div>

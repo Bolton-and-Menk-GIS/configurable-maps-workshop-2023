@@ -61,6 +61,7 @@ export const useAppStore = defineStore('app', ()=> {
   watch(
     ()=> darkMode.value,
     (isDark)=> {
+    
       setBootstrapTheme(isDark ? 'dark': 'light')
     },
     // run watch handler immediately
