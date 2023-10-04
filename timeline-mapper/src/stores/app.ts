@@ -1,16 +1,70 @@
 import { defineStore } from "pinia"
-import { ref, computed } from 'vue'
+import { ref, computed, watch, type Ref } from 'vue'
 import { useWindowSize } from '@vueuse/core'
-import type { ThemeType, DeviceOrientation } from "@/types"
+import type { ThemeType, DeviceOrientation, AppConfig } from "@/types"
+import { setBootstrapTheme, getPreferredTheme } from "@/utils"
+
+const testConfig: AppConfig = {
+  app: {
+    title: "Civil War Battles",
+    theme: {
+      primary: "#ffa500",
+      secondary: "#FFD93D",
+      info: "#406ac9",
+      dark: "#1D1D1D",
+      success: "#21BA45",
+      danger: "#ac0b30",
+      warning: "#F2C037"
+    }
+  },
+  map: {
+    defaultDarkBasemapId: 'streets-night-vector',
+    defaultLightBasemapId: 'topo-vector',
+    webmap: {
+      portalItem: {
+        id: "246abd2b6b71403b9edbe6538ebc8534",
+        portal: {
+          url: "https://bmi.maps.arcgis.com/"
+        }
+      }
+    },
+    mapView: {
+      zoom: 4,
+      center: [
+        -79.87481095392569,
+        32.752114229033296
+      ]
+    }
+  }
+}
 
 export const useAppStore = defineStore('app', ()=> {
 
   const { width, height } = useWindowSize()
- 
+
+  /**
+   *  note: some of the esri typings do not play nicely with TypeScript 5
+   * so we are casting the config inside the ref as any
+   */
+  /**
+   * the application config
+   */
+  const config: Ref<AppConfig> = ref(testConfig as any)
+  
   /**
    * will be true if the app is dark mode
    */
-  const darkMode = ref(false)
+  const darkMode = ref(getPreferredTheme() === 'dark')
+
+  // update the bootstrap theme whenever the dark mode changes from the toggle
+  watch(
+    ()=> darkMode.value,
+    (isDark)=> {
+      setBootstrapTheme(isDark ? 'dark': 'light')
+    },
+    // run watch handler immediately
+    { immediate: true }
+  )
 
   /**
    * state for the left panel, true when open
@@ -68,6 +122,7 @@ export const useAppStore = defineStore('app', ()=> {
 
   return {
     theme,
+    config,
     width,
     height,
     orientation,

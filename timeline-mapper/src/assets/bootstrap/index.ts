@@ -3,7 +3,7 @@ import type { DirectiveBinding, Directive } from 'vue'
 import { 
   Popover
 } from 'bootstrap'
-import { log } from '@/utils'
+import { log } from '@/utils';
 
 export type PopoverProps = Partial<Popover.Options>;
 
