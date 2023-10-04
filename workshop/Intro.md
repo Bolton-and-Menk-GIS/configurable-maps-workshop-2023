@@ -59,7 +59,7 @@ Because the WebMap requirements are so simple, you can choose to use your own We
 
 This repository has step by step instructions for building this application from start to finish. Each part is broken down into a section and if you follow along, code snippets with explanations will walk you through each part of the application. There are also different branches with the solution for each section so you can `git checkout <section-branch-name>` if you don't want to type out all the code snippets. 
 
-To get started, proceed to [Section 1 - Getting Started](./sections/001-GettingStarted.MD)
+To get started, proceed to [Section 1 - Getting Started](./sections/001-GettingStarted.md)
 
 #### The completed Application
 

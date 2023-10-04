@@ -112,6 +112,8 @@ rm -rf src/assets/*
 mkdir src/assets/styles && touch src/assets/styles/style.scss
 ```
 
+**Important** - go into `src/main.ts` and delete the top line that is importing the `style.css` file we just deleted.
+
 For now, all we will do in this file is bring in the `bootstrap` css:
 
 ```scss
